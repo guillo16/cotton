@@ -1,0 +1,27 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+}
+
+.banner-container {
+
+  text-align: center;
+  background-color: rgba(0,0,0,0.6);
+  padding: 30px 40px;
+  width: 100%;
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 35px;
+    font-weight: bold;
+  }
+  p {
+    color: white;
+    font-weight: bold;
+
+  }
+}
+
+
