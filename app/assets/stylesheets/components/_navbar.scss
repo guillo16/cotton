@@ -1,4 +1,6 @@
+// navbar phone
 .navbar-lewagon {
+  display: none;
   justify-content: space-between;
   background: white;
 }
@@ -33,3 +35,71 @@
   }
 
 }
+
+.nav-cart {
+  display: flex;
+}
+
+.cart {
+  display: none;
+}
+//macbook session
+.navbar-macbook {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  .links {
+    display: flex;
+    a {
+      color: grey;
+    }
+  }
+}
+
+
+
+@media (min-width: 100px)and(max-width: 575px) {
+  .navbar-lewagon {
+    display: block;
+    display: flex;
+}
+  .cart {
+  display: block;
+}
+
+.navbar-macbook {
+  display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
