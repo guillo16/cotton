@@ -12,9 +12,6 @@
 </button>
 <%= render 'shared/images' %>
 
-
-
-
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
 
 
@@ -37,3 +34,28 @@
     </div>
   </div>
 </div>
+
+<button id="click_me">click</button>
+
+<ul></ul>
+
+<script>
+
+  const apiUrl = "http://www.omdbapi.com/?s=harry potter&apikey=adf1f2d7"
+
+ fetch(apiUrl)
+ .then(response => response.json())
+ .then((data) => {
+  console.log(data);
+ })
+ // 51 minutos
+  // console.log("hello from src/index!");
+
+  // const button = document.getElementById('click_me');
+  // button.addEventListener('click', (event) => {
+  //   event.currentTarget.innerText = "please wait";
+  //   event.currentTarget.setAttribute("disabled", "");
+  // } )
+
+</script>
+
