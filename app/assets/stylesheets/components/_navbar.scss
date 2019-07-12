@@ -43,6 +43,8 @@
 .cart {
   display: none;
 }
+
+
 //macbook session
 .navbar-macbook {
   display: flex;
@@ -52,29 +54,55 @@
   padding: 10px;
   .links {
     display: flex;
+    text-align: center;
+
     a {
-      color: grey;
+      color: rgb(74, 73, 74);
+      padding: 0px;
+    }
+    i {
+      color: rgb(74, 73, 74);
+      padding: 5px;
     }
   }
 }
 
+.carts {
+  margin-left: 65px;
+  color: grey;
+  i {
+    font-size: 20px;
+  }
+}
 
 
 @media (min-width: 100px)and(max-width: 575px) {
   .navbar-lewagon {
     display: block;
     display: flex;
-}
+  }
   .cart {
-  display: block;
+    display: block;
+    a {
+      color: grey;
+    }
+  }
+
+  .navbar-macbook {
+    display: none;
+  }
 }
 
-.navbar-macbook {
-  display: none;
-}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 
-
+.sticky + .home-container {
+  padding-top: 80px;
+}
 
 
 

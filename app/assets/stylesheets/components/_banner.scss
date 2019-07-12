@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 250px 0;
+  padding: 150px 0;
 }
 
 .banner-container {
@@ -26,3 +26,8 @@
 }
 
 
+@media (min-width: 100px)and(max-width: 575px) {
+  .banner {
+    display: none;
+  }
+}

@@ -1,3 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1562932831-afcfe48b5786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1089&q=80);">
+  <div class="container">
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+<%= render 'shared/navbar' %>
 <div class="home-container">
   <h1><i class="fas fa-home"></i></h1>
   <h2>COTTON</h2>
@@ -29,3 +35,27 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1562932831-afcfe48b5786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1089&q=80);">
+  <div class="container">
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1562932831-afcfe48b5786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1089&q=80);">
+  <div class="container">
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
+<script>
+  window.onscroll = function() {myFunction()};
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+</script>
