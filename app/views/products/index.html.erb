@@ -34,28 +34,79 @@
     </div>
   </div>
 </div>
+<br><br><br>
 
-<button id="click_me">click</button>
+<form id="search-movies" class="form-inline">
+  <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
+  <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
+</form>
+<ul id="results"></ul>
 
-<ul></ul>
+
+<input type="text" id="search">
 
 <script>
 
-  const apiUrl = "http://www.omdbapi.com/?s=harry potter&apikey=adf1f2d7"
+  const results = document.querySelector('#results');
 
- fetch(apiUrl)
- .then(response => response.json())
- .then((data) => {
-  console.log(data);
- })
- // 51 minutos
-  // console.log("hello from src/index!");
 
-  // const button = document.getElementById('click_me');
-  // button.addEventListener('click', (event) => {
-  //   event.currentTarget.innerText = "please wait";
-  //   event.currentTarget.setAttribute("disabled", "");
-  // } )
+  const searchMovies = (query) => {
+    fetch(`http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`)
+    .then(response => response.json())
+    .then((data) => {
+      data.Search.forEach((result) => {
+        const movie = `<li class="list-inline-item">
+        <img src="${result.Poster}" alt="">
+        <p>${result.Title}</p>
+        </li>`;
+        results.insertAdjacentHTML("beforeend", movie);
+      });
+    });
+  };
+
+  const form = document.querySelector('#search-movies');
+
+  form.addEventListener('submit', (event) => {
+  event.preventDefault(); // <-- to prevent <form>'s native behaviour
+  const input = event.currentTarget.querySelector('.form-control');
+  results.innerHTML = '';
+  searchMovies(input.value);
+});
+
+  searchMovies('harry potter')
+
+
+
+
+
+const searchAlgoliaPlaces = (event) => {
+  fetch("https://places-dsn.algolia.net/1/places/query", {
+    method: "POST",
+    body: JSON.stringify({ query: event.currentTarget.value })
+  })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data.hits); // Look at local_names.default
+    });
+};
+
+const input = document.querySelector("#search");
+input.addEventListener("keyup", searchAlgoliaPlaces);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
