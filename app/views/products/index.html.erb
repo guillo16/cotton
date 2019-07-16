@@ -40,73 +40,57 @@
   <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
   <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
 </form>
-<ul id="results"></ul>
-
+<ul class="list-inline"id="results"></ul>
 
 <input type="text" id="search">
 
 <script>
 
-  const results = document.querySelector('#results');
 
-
-  const searchMovies = (query) => {
-    fetch(`http://www.omdbapi.com/?s=${query}&apikey=adf1f2d7`)
-    .then(response => response.json())
-    .then((data) => {
-      data.Search.forEach((result) => {
-        const movie = `<li class="list-inline-item">
-        <img src="${result.Poster}" alt="">
-        <p>${result.Title}</p>
-        </li>`;
-        results.insertAdjacentHTML("beforeend", movie);
-      });
-    });
-  };
-
-  const form = document.querySelector('#search-movies');
-
-  form.addEventListener('submit', (event) => {
-  event.preventDefault(); // <-- to prevent <form>'s native behaviour
-  const input = event.currentTarget.querySelector('.form-control');
-  results.innerHTML = '';
-  searchMovies(input.value);
-});
-
-  searchMovies('harry potter')
-
-
-
-
-
-const searchAlgoliaPlaces = (event) => {
+const searchAgoliaPlaces = (event) => {
   fetch("https://places-dsn.algolia.net/1/places/query", {
     method: "POST",
     body: JSON.stringify({ query: event.currentTarget.value })
   })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data.hits); // Look at local_names.default
-    });
-};
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data.hits);
+  });
+}
 
-const input = document.querySelector("#search");
-input.addEventListener("keyup", searchAlgoliaPlaces);
+const input = document.querySelector('#search');
+input.addEventListener('keyup', searchAgoliaPlaces);
 
-
-
-
+  // const results = document.querySelector('#results')
 
 
+  // const searchMovies = (keyword) => {
+  //   const apiUrl = `http://www.omdbapi.com/?s=${keyword}&apikey=adf1f2d7`
+
+
+  //   fetch(apiUrl)
+  //   .then(response => response.json())
+  //   .then((data) => {
+  //     data.Search.forEach((movie) => {
+  //       const newMovie = `<li> <img src="${movie.Poster}"  />
+  //       <p>${movie.Title}</p>
+  //       </li>`
+  //       results.insertAdjacentHTML('beforeend', newMovie)
+  //     });
+  //   });
+  // }
 
 
 
+  // const searchForm = document.querySelector('#search-movies');
+  // searchForm.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   results.innerHTML = "";
+  //   const keyword = document.querySelector('#keyword').value;
+  //   searchMovies(keyword);
+  // });
 
-
-
-
-
-
+  // searchMovies("The green Mile");
 
 </script>
 
