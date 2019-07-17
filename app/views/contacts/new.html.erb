@@ -1,0 +1,32 @@
+<div class="contact-container">
+  <div class="form-container">
+    <%= form_for @contact do |f| %>
+    <% if flash[:error].present? %>
+    <p> flash[:error]</p>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :name %> <br>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= f.label :email %> <br>
+      <%= f.text_field :email, required: true %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= f.label :message %> <br>
+      <%= f.text_area :message, as: :text %>
+    </div>
+    <div class="hidden">
+      <%= f.label :nickname %> <br>
+      <%= f.text_field :nickname, hint: 'leave this field blank' %>
+    </div>
+  </div>
+  <div class="end-form">
+
+    <%= f.submit 'Send Message', class: "button" %>
+    <% end %>
+  </div>
+</div>
+

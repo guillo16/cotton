@@ -1,0 +1,27 @@
+.contact-container {
+
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.form-container {
+  width: 90%;
+  margin: 0 auto;
+  label {
+   text-align: left;
+  }
+
+}
+.hidden {
+  display: none;
+}
+
+
+.form-group {
+  text-align: left;
+  input {
+    width: 400px;
+    padding: 10px;
+  }
+}
