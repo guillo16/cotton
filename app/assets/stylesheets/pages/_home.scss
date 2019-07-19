@@ -24,6 +24,18 @@ h3 {
 }
 }
 
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+    img {
+      width: 300px;
+    }
+  }
+}
 
 @media (min-width: 100px)and(max-width: 575px) {
 
