@@ -35,6 +35,20 @@ h3 {
     }
   }
 }
+// typeds
+
+.typed-container {
+
+  text-align: center;
+  color:#fff;
+  padding: 100px 0;
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+  }
+}
 
 @media (min-width: 100px)and(max-width: 575px) {
 
