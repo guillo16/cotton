@@ -24,16 +24,24 @@ h3 {
 }
 }
 
-.scrolling-wrapper {
-   display: flex;
-   overflow-x: auto;
+.cards-container{
+ width: 90%;
+ margin: 0 auto;
+ display: flex;
+ overflow-x: auto;
 
-  .card {
-    img {
-      min-width: 300px;
-      height: 200px;
-    }
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cards {
+  img {
+    margin-right: 10px;
+    width: 300px;
   }
+
 }
 // typeds
 
